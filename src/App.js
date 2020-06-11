@@ -1,16 +1,33 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar';
 import Carousel from "./Components/Carousel/Carousel";
 import Footer from './Components/Footer/Footer';
+import Estimator from "./Components/Estimator/Estimator";
+import LoggedNav from "./Components/LoggedNav/LoggedNav";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar></Navbar>
-        <Carousel></Carousel>
-        <Footer/>
-    </div>
+      <Router>
+        <div className="App">
+          <Switch>
+              <Route path='/' exact component={Carousel}>
+                  <Navbar/>
+                  <Carousel/>
+                  <Footer/>
+              </Route>
+              <Route path="/Estimator" exact component={Estimator}>
+                  <Navbar/>
+                  <Estimator/>
+                  <Footer/>
+              </Route>
+          </Switch>
+
+
+        </div>
+      </Router>
+
   );
 }
 
