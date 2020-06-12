@@ -6,6 +6,7 @@ import Carousel from "./Components/Carousel/Carousel";
 import Footer from './Components/Footer/Footer';
 import Estimator from "./Components/Estimator/Estimator";
 import LoggedNav from "./Components/LoggedNav/LoggedNav";
+import Reset from "./Components/Reset/Reset";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
                   <Navbar/>
                   <Estimator/>
                   <Footer/>
+              </Route>
+              <Route path="/reset" exact component={LoggedNav}>
+                <LoggedNav name="Dynamic_User"/>
+                <Reset/>
               </Route>
           </Switch>
 
