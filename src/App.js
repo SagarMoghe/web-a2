@@ -32,6 +32,7 @@ function App() {
 
               <Route path="/result" exact component={LoggedNav}>
                   <LoggedNav name='Dynamic user'></LoggedNav>
+                  <SearchedResults></SearchedResults>
               </Route>
 
           </Switch>
