@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Estimator from "./Components/Estimator/Estimator";
 import LoggedNav from "./Components/LoggedNav/LoggedNav";
 import Reset from "./Components/Reset/Reset";
+import SearchResult from "./Components/SearchResults/SearchResult";
 
 function App() {
   return (
@@ -26,7 +27,13 @@ function App() {
               <Route path="/reset" exact component={LoggedNav}>
                 <LoggedNav name="Dynamic_User"/>
                 <Reset/>
+                  <Footer/>
               </Route>
+
+              <Route path="/result" exact component={LoggedNav}>
+                  <LoggedNav name='Dynamic user'></LoggedNav>
+              </Route>
+
           </Switch>
 
 

@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import './Estimator.css';
 
 class Estimator extends Component {
-    state = {
-        distance: 0
-    }
+
 
     generateOpHandler = (event) => {
         this.setState({

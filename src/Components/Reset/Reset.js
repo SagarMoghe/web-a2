@@ -24,14 +24,18 @@ class Reset extends Component{
         console.log(this.state.Password);
         console.log(this.state.NewPassword);
 
+
         if(this.state.Password!==this.state.NewPassword){
             // console.log(this.state.Password,this.state.NewPassword)
             // event.target.setCustomValidity("Password Do not match")
             alert("Passwords don't match");
             event.preventDefault()
-        }else{
+        }else if (this.state.Password.length!==0){
             alert("Password successfully changed, click on home button")
             this.setState({originalPass:this.state.Password})
+            event.preventDefault()
+        }else {
+            alert("Blank password not accepted");
             event.preventDefault()
         }
 
