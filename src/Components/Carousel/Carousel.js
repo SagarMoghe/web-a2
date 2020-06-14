@@ -2,6 +2,8 @@ import React from "react";
 import save from './Save.svg'
 import facts from './facts.svg'
 import estimator from './estimator.svg'
+import { Link } from "react-router-dom";
+// import Estimator from "../Estimator/Estimator";
 
 const Carousel = (props) =>{
     return(
@@ -45,8 +47,7 @@ const Carousel = (props) =>{
                                <div className="carousel-caption text-right text-dark">
                                    <h1>Try our experimental feature</h1>
                                    <p>Estimate your ride cost based on the ride details</p>
-                                   <p><a className="btn btn-lg btn-primary" href="#" role="button">Try Now</a>
-                                   </p>
+                                   <Link to="/Estimator" className="btn btn-lg btn-primary" role="button">Try Now</Link>
                                </div>
                            </div>
                    </div>
