@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Helmet} from "react-helmet";
 import './Estimator.css';
 
 class Estimator extends Component {
