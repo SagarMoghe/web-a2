@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import LoggedNavbar from "../LoggedNavbar/LoggedNavbar";
+import LoggedNavbar from "../LoggedNav/LoggedNav";
 import Filter from "../Filter/Filter";
 import RideCard from "../RideCard/RideCard";
 import pic from "../../pic.jpg";

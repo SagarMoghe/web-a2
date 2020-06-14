@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import './Estimator.css';
 
 class Estimator extends Component {
-
+    state = {
+        distance: 0
+    }
 
     generateOpHandler = (event) => {
         this.setState({
@@ -18,7 +20,7 @@ class Estimator extends Component {
 
                 <div className="jumbotron">
                     <h1 className="display-4">Cost Estimator</h1>
-                    <p className="lead">This is a simple calculator that will help you canculate your fare.</p>
+                    <p className="lead">This is a simple calculator that will help you calculate your fare.</p>
 
                     <p>Please note that this is an approximation of the cost and car owner charges may vary as per their
                         discretion.</p>
@@ -27,15 +29,15 @@ class Estimator extends Component {
                     </p>
                     <br/>
                     <hr className="my-4"/>
-                    <form>
+                    <form id='myform' onSubmit="openModal()">
                         <div className="form-row ">
                             <div className="form-group col-md-6 ">
                                 <label htmlFor="inputEmail4" className='float-left'>Email</label>
-                                <input type="email" className="form-control" id="inputEmail4"/>
+                                <input type="email" className="form-control" id="inputEmail4" required="true"/>
                             </div>
                             <div className="form-group col-md-6 ">
                                 <label htmlFor="inputPassword4" className='float-left'>Name</label>
-                                <input type="text" className="form-control" id="inputPassword4"/>
+                                <input type="text" className="form-control" id="inputPassword4" required="true"/>
                             </div>
                         </div>
                         <div className="form-group ">
@@ -57,20 +59,20 @@ class Estimator extends Component {
                             <div className="form-group col-md-2">
                                 <label htmlFor="inputZip" className='float-left'>Distance journey</label>
                                 <input type="number" min="0" className="form-control" id="inputdist" placeholder='Km'
-                                       onChange={this.generateOpHandler}/>
+                                       onChange={this.generateOpHandler} required="true"/>
                             </div>
                         </div>
                         <div className="form-group">
                             <div className="form-check float-left">
-                                <input className="form-check-input " type="checkbox" id="gridCheck"/>
-                                <label className="form-check-label" htmlFor="gridCheck">
+                                <input className="form-check-input " type="checkbox" id="gridCheck" required='true'/>
+                                <label className="form-check-label" htmlFor="gridCheck" >
                                     I agree to terms and conditions
                                 </label>
                             </div>
                         </div>
                         <br/>
-                        <button type="button" className="btn btn-primary float-left" data-toggle="modal"
-                                data-target="#staticBackdrop">
+                        <button type="submit" className="btn btn-primary float-left" data-toggle="modal"
+                                data-target="#staticBackdrop" id="formSubmit" >
                             Get an estimate
                         </button>
                     </form>
@@ -96,7 +98,6 @@ class Estimator extends Component {
                         </div>
                     </div>
                 </div>
-
 
             </div>
         );
